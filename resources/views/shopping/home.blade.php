@@ -41,7 +41,7 @@
                 </form>
             </div>
             <div class="basis-1/4 px-3">
-                <a href="#">登入</a>
+                <a href="/login">登入</a>
                 <a href="#">購物車</a>
                 <a href="#">小鈴鐺 </a>
             </div>

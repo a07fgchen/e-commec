@@ -15,14 +15,23 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/',function(){
+//     return Inertia::render('Test');
+// });
+Route::get('/',fn () =>Inertia::render('Test'));
+
+Route::inertia('/about','About');
+
+// Route::get('/abount',fn () =>Inertia::render('Test'));
+
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -31,5 +40,10 @@ Route::get('/dashboard', function () {
 Route::get('/home',function(){
     return view('shopping.home');
 });
+
+
+// Route::get('/spa',function(){
+//     return Inertia::render('SingePage');
+// });
 
 require __DIR__.'/auth.php';
