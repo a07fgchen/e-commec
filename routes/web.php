@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,14 +16,19 @@ use Inertia\Inertia;
 |
 */
 
-// Route::get('/',function(){
-//     return Inertia::render('Test');
-// });
-Route::get('/',fn () =>Inertia::render('Test'));
+Route::get('/', function () {
+    return Inertia::render('HomePage', [
+        'logged' => Auth::check(),
+    ]);
+})->name('homepage');
 
-Route::inertia('/about','About');
+Route::get('cart', function () {
+    return Inertia::render('Cart');
+})->name('cart');
 
-// Route::get('/abount',fn () =>Inertia::render('Test'));
+Route::get('notification', function () {
+    return Inertia::render('notification');
+})->name('notification');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -37,13 +43,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/home',function(){
+Route::get('/home', function () {
     return view('shopping.home');
 });
 
-
-// Route::get('/spa',function(){
-//     return Inertia::render('SingePage');
-// });
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
