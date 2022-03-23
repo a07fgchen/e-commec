@@ -1,9 +1,8 @@
 <script setup>
-import { Head, Link } from "@inertiajs/inertia-vue3";
+import { Head } from "@inertiajs/inertia-vue3";
 import Button from "@/Components/Button.vue";
-defineProps({
-  logged: Boolean,
-});
+import NavLink from "@/Components/NavLinkDefault.vue";
+
 </script>
 <template>
   <Head title="HomePage" />
@@ -16,11 +15,9 @@ defineProps({
         </div>
         <div class="basis-1/2 px-3">
           <form>
-            <input
-              type="button"
-              class="rounded-md bg-slate-100 p-1 text-slate-700 border-slate-700 border-2 focus:border-sky-500"
-              value="搜尋"
-            />
+             <NavLink :href="route('search')" method="get" as="button" type="button">
+              搜尋
+            </NavLink>
             <label for="keyword">
               <input
                 type="search"
@@ -33,20 +30,25 @@ defineProps({
         </div>
         <div class="basis-1/4 px-3 inline-flex justify-between">
           <template v-if="$page.props.auth.user">
-            <Link :href="route('notification')">通知</Link>
+            <NavLink :href="route('logout')" method="post" as="button" type="button">
+              登出
+            </NavLink>
+            <NavLink :href="route('notification')" as="button" type="button"
+              >通知</NavLink
+            >
           </template>
 
           <template v-else>
-            <Link :href="route('login')"> 登入 </Link>
+            <NavLink :href="route('login')" as="button"> 登入 </NavLink>
 
-            <Link :href="route('register')"> 註冊 </Link>
+            <NavLink :href="route('register')"> 註冊 </NavLink>
           </template>
 
-          <Link :href="route('cart')">購物車</Link>
+          <NavLink :href="route('cart')">購物車</NavLink>
         </div>
       </div>
     </nav>
-    <div class="container mt-10">
+    <div class="max-w-7xl mt-10">
       <div class="flex flex-row flex-wap py-10">
         <aside class="w-full sm:w-1/3 md:1/4 px-2">
           <div

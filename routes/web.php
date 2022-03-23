@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,12 +16,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return Inertia::render('HomePage', [
-        'logged' => Auth::check(),
-    ]);
-})->name('homepage');
+Route::get('/',[ProductController::class,'index'])->name('homepage');
 
 Route::get('cart', function () {
     return Inertia::render('Cart');
@@ -28,7 +24,11 @@ Route::get('cart', function () {
 
 Route::get('notification', function () {
     return Inertia::render('notification');
-})->name('notification');
+})->middleware(['auth', 'verified'])->name('notification');
+
+Route::get('search', function () {
+    return Inertia::render('search');
+})->name('search');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
