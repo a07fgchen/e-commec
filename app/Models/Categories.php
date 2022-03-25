@@ -5,8 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Categories extends Model
 {
     use HasFactory;
 
+    public function product()
+    {
+        return $this->hasMany(Product::class,'category_id');
+    }
 }
