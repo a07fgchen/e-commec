@@ -14,7 +14,7 @@ class ProductController extends Controller
         return Inertia::render(
             'HomePage',
             [
-                'products' => Product::get(['name','description'])->toArray(),
+                'products' => Product::get(['name', 'description'])->toArray(),
             ]
         );
     }

@@ -20,9 +20,9 @@ use Inertia\Inertia;
 */
 // Route::get('/',[HomePageController::class,'index'])->name('homepage');
 
-Route::get('product',[ProductController::class,'index'])->name('product');
+Route::get('product', [ProductController::class, 'index'])->name('product');
 
-Route::get('category',[CategoriesController::class,'index'])->name('category');
+Route::get('category', [CategoriesController::class, 'index'])->name('category');
 
 Route::get('cart', function () {
     return Inertia::render('Cart');
@@ -36,14 +36,35 @@ Route::get('search', function () {
     return Inertia::render('search');
 })->name('search');
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+Route::get('/',function(){
+    return Inertia::render('Index');
 });
+
+Route::get('/home',function () {
+        return Inertia::render('Home');
+    }
+)->name('home');
+
+Route::get('/setting',function () {
+    return Inertia::render('Setting');
+}
+)->name('setting');
+
+Route::get('/users',function () {
+    return Inertia::render('Users', [
+        'time' => now()->toTimeString()
+        ]);
+}
+)->name('users');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
