@@ -5,8 +5,8 @@ defineProps({
 });
 </script>
 <template>
-  <Link class="text-blue-500 hover:underline" 
-  :class="{'font-bold underline':active}">
+  <Link class="text-blue-500 block md:w-auto md:static md:hover:underline" 
+  :class="{'font-bold bg-black md:bg-inherit md:underline':active}">
     <slot />
   </Link>
 </template>

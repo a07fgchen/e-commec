@@ -1,8 +1,12 @@
 <script setup>
-import Layout from "@/Layouts/Ecommence/Layout";
+import Layout from "@/Layouts/Ecommence/Layout.vue";
 </script>
-<template>
-    <Layout>
-        Home
-    </Layout>
-</template>
+<template>Home</template>
+<script>
+    export default{
+       layout:Layout,
+       mounted(){
+           console.log(this.route('index'))
+       }
+    }
+</script>
