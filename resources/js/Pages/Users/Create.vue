@@ -8,16 +8,20 @@ let form = reactive({
   password: "",
 });
 
-let submit = () =>{
-  Inertia.post(route('users'),form);
-}
+defineProps({
+  errors:Object
+})
+
+let submit = () => {
+  Inertia.post(route("users"), form);
+};
 </script>
 <template>
   <Head title="Create User" />
 
   <h1 class="text-3xl">Create</h1>
 
-  <form @submit.prevent="submit" method="POST" :action="route('home')" class="max-w-md mx-auto mt-8">
+  <form @submit.prevent="submit" class="max-w-md mx-auto mt-8">
     <div class="mt-6">
       <label
         for="email"
@@ -31,8 +35,12 @@ let submit = () =>{
         type="text"
         name="name"
         id="name"
-        require
       />
+      <div
+        v-if="errors.name"
+        v-text="errors.name"
+        class="text-red-500 text-xs mt-1"
+      ></div>
     </div>
     <div class="mt-6">
       <label
@@ -47,8 +55,12 @@ let submit = () =>{
         type="email"
         name="email"
         id="email"
-        require
       />
+      <div
+        v-if="errors.email"
+        v-text="errors.email"
+        class="text-red-500 text-xs mt-1"
+      ></div>
     </div>
     <div class="mt-6">
       <label
@@ -63,8 +75,12 @@ let submit = () =>{
         type="password"
         name="password"
         id="password"
-        require
       />
+      <div
+        v-if="errors.password"
+        v-text="errors.password"
+        class="text-red-500 text-xs mt-1"
+      ></div>
     </div>
     <div class="mt-6">
       <button

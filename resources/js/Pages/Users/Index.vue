@@ -27,7 +27,16 @@ watch(search, (value) => {
 
   <div class="text-gray-900 bg-gray-200">
     <div class="p-4 flex justify-between">
-      <h1 class="text-3xl">Users</h1>
+      <div class="flex items-center">
+        <h1 class="text-3xl">Users</h1>
+
+        <Link
+          class="text-blue-500 hover:underline text-sm ml-3"
+          :href="route('users.create')"
+        >
+          New User
+        </Link>
+      </div>
       <input
         type="text"
         v-model="search"

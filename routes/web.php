@@ -99,7 +99,7 @@ Route::post('/users',function(){
     User::create($attibutes);
 
     return redirect('/users');
-});
+})->name('users.new');
 
 Route::get(
     '/users/{id}/edit',
