@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\HomePageController;
 use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
@@ -20,11 +19,9 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/',[HomePageController::class,'index'])->name('homepage');
-
-Route::get('product', [ProductController::class, 'index'])->name('product');
-
-Route::get('category', [CategoriesController::class, 'index'])->name('category');
+Route::get('/', function () {
+    return Inertia::render('HomePage/Index');
+})->name('home');
 
 Route::get('cart', function () {
     return Inertia::render('Cart');
@@ -33,29 +30,6 @@ Route::get('cart', function () {
 Route::get('notification', function () {
     return Inertia::render('notification');
 })->middleware(['auth', 'verified'])->name('notification');
-
-Route::get('search', function () {
-    return Inertia::render('search');
-})->name('search');
-
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
-Route::get('/', function () {
-    return Inertia::render('Index');
-})->name('index');
-
-Route::get(
-    '/home',
-    function () {
-        return Inertia::render('Home');
-    }
-)->name('home');
 
 Route::get(
     '/setting',
@@ -100,17 +74,6 @@ Route::post('/users',function(){
 
     return redirect('/users');
 })->name('users.new');
-
-Route::get(
-    '/users/{id}/edit',
-    function () {
-        return Inertia::render('Users/Index', [
-            'users' => User::select(['id', 'name', 'email'])->paginate(10),
-            'time' => now()->toTimeString()
-        ]);
-    }
-)->name('user.edit');
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

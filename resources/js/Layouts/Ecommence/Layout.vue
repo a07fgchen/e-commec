@@ -3,12 +3,12 @@ import NavBar from "@/Components/Ecommence/NavBar";
 </script>
 
 <template>
-  <section>
-    <NavBar />
-  </section>
-  <section class="p-6">
-    <div class="max-w-6xl mx-auto">
+  <div class="from-slate-400 bg-gradient-to-tl min-h-screen">
+    <section>
+      <NavBar />
+    </section>
+    <section>
       <slot />
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
