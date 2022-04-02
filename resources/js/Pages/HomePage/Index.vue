@@ -15,7 +15,7 @@
     </div>    
   </div>
   <div id="catrgory">
-      <div class="flex mx-auto space-x-2 container">
+      <div class="flex mx-auto space-x-2 container mt-12">
           <div class="basis-1/3">
             <img src="images/category/category-1.jpg" alt="">
           </div>
@@ -28,16 +28,42 @@
       </div>
   </div>
   <div id="product">
-      <div class="container mx-auto mt-2">
-        <h2>Feature Products</h2>
-        <div class="flex justify-center">
+      <div class="container mx-auto mt-12">
+        <h2 class="text-xl font-bold mx-auto text-center">Feature Products</h2>
+        <div class="flex justify-center space-x-2 mt-3">
                 <div class="basis-1/4">
-                    <img class="w-full" src="images/products/t-shirt/product-1.jpg" alt="">
+                    <img class="w-full" src="images/products/product-1.jpg" alt="">
                     <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-2.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-3.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-4.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
                     <p>$50.00</p>
                 </div>
         </div>
-
       </div>
   </div>
 </template>
