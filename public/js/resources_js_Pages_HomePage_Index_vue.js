@@ -303,7 +303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "from-slate-400 bg-gradient-to-tl min-h-screen"
+  "class": "from-slate-300 bg-gradient-to-tl min-h-screen pb-5"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["NavBar"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])]);
@@ -353,7 +353,56 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"catrgory\"><div class=\"flex mx-auto space-x-2 container mt-12\"><div class=\"basis-1/3\"><img src=\"images/category/category-1.jpg\" alt=\"\"></div><div class=\"basis-1/3\"><img src=\"images/category/category-2.jpg\" alt=\"\"></div><div class=\"basis-1/3\"><img src=\"images/category/category-3.jpg\" alt=\"\"></div></div></div><div id=\"product\"><div class=\"container mx-auto mt-12\"><h2 class=\"text-xl font-bold mx-auto text-center\">Feature Products</h2><div class=\"flex justify-center space-x-2 mt-3\"><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-1.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p>$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-2.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p>$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-3.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p>$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-4.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p>$50.00</p></div></div></div></div>", 2);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"catrgory\"><div class=\"flex mx-auto space-x-2 container mt-12\"><div class=\"basis-1/3\"><img src=\"images/category/category-1.jpg\" alt=\"\"></div><div class=\"basis-1/3\"><img src=\"images/category/category-2.jpg\" alt=\"\"></div><div class=\"basis-1/3\"><img src=\"images/category/category-3.jpg\" alt=\"\"></div></div></div>", 1);
+
+var _hoisted_8 = {
+  id: "product"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container mx-auto mt-20\"><h2 class=\"text-xl font-bold text-center relative after:content-[&#39;&#39;] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1\">Feature Products</h2><div class=\"flex justify-center space-x-2 mt-5\"><div class=\"basis-1/4\"><img class=\"w-full hover:-translate-y-1.5 transition-transform\" src=\"images/products/product-1.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-2.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-3.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-4.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div></div><h2 class=\"text-xl font-bold text-center relative after:content-[&#39;&#39;] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1 mt-10\">Latest Products</h2><div class=\"flex justify-center space-x-2 mt-5\"><div class=\"basis-1/4\"><img class=\"w-full hover:-translate-y-1.5 transition-transform\" src=\"images/products/product-5.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-6.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-7.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-8.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div></div><div class=\"flex justify-center space-x-2 mt-5\"><div class=\"basis-1/4\"><img class=\"w-full hover:-translate-y-1.5 transition-transform\" src=\"images/products/product-9.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-10.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-11.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"images/products/product-12.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\"> ★ </div><p class=\"text-sm\">$50.00</p></div></div></div>", 1);
+
+var _hoisted_10 = {
+  id: "offer"
+};
+var _hoisted_11 = {
+  "class": "container mx-auto mt-40"
+};
+var _hoisted_12 = {
+  "class": "flex justify-center items-center"
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "basis-1/2"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "images/exclusive.png",
+  "class": "w-full"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_14 = {
+  "class": "basis-1/2"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit.", -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Lorem, ipsum dolor.", -1
+/* HOISTED */
+);
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, qui. Officiis, explicabo. Nulla obcaecati assumenda nobis dignissimos blanditiis in veniam dolores pariatur odit temporibus, earum distinctio nostrum minima corporis dicta?", -1
+/* HOISTED */
+);
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("開始介紹 →");
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"user\"><div class=\"container mx-auto mt-40\"><div class=\"flex text-center justify-center items-center space-x-2\"><div class=\"basis-1/3 border border-sky-500 rounded-sm hover:-translate-y-10\"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, possimus. </p> ★ <img src=\"images/user-1.png\" class=\"w-full\"><h3>Sean Parker</h3></div><div class=\"basis-1/3 border border-sky-500 rounded-sm hover:-translate-y-10\"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, possimus. </p> ★ <img src=\"images/user-2.png\" class=\"w-full\"><h3>Sean Parker</h3></div><div class=\"basis-1/3 border border-sky-500 rounded-sm hover:-translate-y-10\"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, possimus. </p> ★ <img src=\"images/user-3.png\" class=\"w-full\"><h3>Sean Parker</h3></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
@@ -368,7 +417,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_6]), _hoisted_7], 64
+  })]), _hoisted_6]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, _hoisted_16, _hoisted_17, _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    as: "button",
+    "class": "border-2 border-sky-500 rounded-full p-3 mt-5 hover:bg-sky-600 hover:text-white text-sm"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_19];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])])])]), _hoisted_20])], 64
   /* STABLE_FRAGMENT */
   );
 }

@@ -28,16 +28,16 @@
       </div>
   </div>
   <div id="product">
-      <div class="container mx-auto mt-12">
-        <h2 class="text-xl font-bold mx-auto text-center">Feature Products</h2>
-        <div class="flex justify-center space-x-2 mt-3">
+      <div class="container mx-auto mt-20">
+        <h2 class="text-xl font-bold text-center relative after:content-[''] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1">Feature Products</h2>
+        <div class="flex justify-center space-x-2 mt-5">
                 <div class="basis-1/4">
-                    <img class="w-full" src="images/products/product-1.jpg" alt="">
+                    <img class="w-full hover:-translate-y-1.5 transition-transform" src="images/products/product-1.jpg" alt="">
                     <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
                     <div class="rating">
                         &#9733;
                     </div>
-                    <p>$50.00</p>
+                    <p class="text-sm">$50.00</p>
                 </div>
                 <div class="basis-1/4">
                     <img class="w-full" src="images/products/product-2.jpg" alt="">
@@ -45,7 +45,7 @@
                     <div class="rating">
                         &#9733;
                     </div>
-                    <p>$50.00</p>
+                    <p class="text-sm">$50.00</p>
                 </div>
                 <div class="basis-1/4">
                     <img class="w-full" src="images/products/product-3.jpg" alt="">
@@ -53,7 +53,7 @@
                     <div class="rating">
                         &#9733;
                     </div>
-                    <p>$50.00</p>
+                    <p class="text-sm">$50.00</p>
                 </div>
                 <div class="basis-1/4">
                     <img class="w-full" src="images/products/product-4.jpg" alt="">
@@ -61,9 +61,128 @@
                     <div class="rating">
                         &#9733;
                     </div>
-                    <p>$50.00</p>
+                    <p class="text-sm">$50.00</p>
                 </div>
         </div>
+        <h2 class="text-xl font-bold text-center relative after:content-[''] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1 mt-10">Latest Products</h2>
+        <div class="flex justify-center space-x-2 mt-5">
+                <div class="basis-1/4">
+                    <img class="w-full hover:-translate-y-1.5 transition-transform" src="images/products/product-5.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-6.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-7.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-8.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+        </div>
+        
+        <div class="flex justify-center space-x-2 mt-5">
+                <div class="basis-1/4">
+                    <img class="w-full hover:-translate-y-1.5 transition-transform" src="images/products/product-9.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-10.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-11.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+                <div class="basis-1/4">
+                    <img class="w-full" src="images/products/product-12.jpg" alt="">
+                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        &#9733;
+                    </div>
+                    <p class="text-sm">$50.00</p>
+                </div>
+        </div>
+      </div>
+      <div id="offer">
+        <div class="container mx-auto mt-40">
+          <div class="flex justify-center items-center">
+            <div class="basis-1/2">
+              <img src="images/exclusive.png" class="w-full">
+            </div>
+            <div class="basis-1/2">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <h1>Lorem, ipsum dolor.</h1>
+              <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, qui. Officiis, explicabo. Nulla obcaecati assumenda nobis dignissimos blanditiis in veniam dolores pariatur odit temporibus, earum distinctio nostrum minima corporis dicta?</small>
+              <br />
+              <Link as="button" class="border-2 border-sky-500 rounded-full p-3 mt-5 hover:bg-sky-600 hover:text-white text-sm">開始介紹 &#8594</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="user">
+          <div class="container mx-auto mt-40">
+              <div class="flex text-center justify-center items-center space-x-2">
+                  <div class="basis-1/3 border border-sky-500 rounded-sm hover:-translate-y-10">
+                    <p>Lorem ipsum dolor sit, 
+                        amet consectetur adipisicing elit. 
+                        Accusantium, possimus.
+                    </p>
+                    &#9733;
+                    <img src="images/user-1.png" class="w-full" />
+                    <h3>Sean Parker</h3>
+                  </div>
+                  <div class="basis-1/3 border border-sky-500 rounded-sm hover:-translate-y-10">
+                    <p>Lorem ipsum dolor sit, 
+                        amet consectetur adipisicing elit. 
+                        Accusantium, possimus.
+                    </p>
+                    &#9733;
+                    <img src="images/user-2.png" class="w-full" />
+                    <h3>Sean Parker</h3>
+                  </div>
+                  <div class="basis-1/3 border border-sky-500 rounded-sm hover:-translate-y-10">
+                    <p>Lorem ipsum dolor sit, 
+                        amet consectetur adipisicing elit. 
+                        Accusantium, possimus.
+                    </p>
+                    &#9733;
+                    <img src="images/user-3.png" class="w-full" />
+                    <h3>Sean Parker</h3>
+                  </div>
+              </div>
+          </div>
       </div>
   </div>
 </template>
