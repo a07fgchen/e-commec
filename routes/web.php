@@ -23,9 +23,17 @@ Route::get('/', function () {
     return Inertia::render('HomePage/Index');
 })->name('home');
 
-Route::get('cart', function () {
-    return Inertia::render('Cart');
+Route::get('/cart', function () {
+    return Inertia::render('Cart/Index');
 })->name('cart');
+
+Route::get('/products', function () {
+    return Inertia::render('Products/Index');
+})->name('products');
+
+Route::get('/products/detail', function () {
+    return Inertia::render('Products/Detail');
+})->name('products.detail');
 
 Route::get('notification', function () {
     return Inertia::render('notification');

@@ -1,3 +1,6 @@
+<script setup>
+import Products from "@/Components/Ecommence/Products";
+</script>
 <template>
   <div id="description" class="flex px-6 pt-12 md:px-12 justify-center items-center">
     <div class="basis-1/2">
@@ -30,40 +33,7 @@
   <div id="product">
       <div class="container mx-auto mt-20">
         <h2 class="text-xl font-bold text-center relative after:content-[''] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1">Feature Products</h2>
-        <div class="flex justify-center space-x-2 mt-5">
-                <div class="basis-1/4">
-                    <img class="w-full hover:-translate-y-1.5 transition-transform" src="images/products/product-1.jpg" alt="">
-                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
-                    <div class="rating">
-                        &#9733;
-                    </div>
-                    <p class="text-sm">$50.00</p>
-                </div>
-                <div class="basis-1/4">
-                    <img class="w-full" src="images/products/product-2.jpg" alt="">
-                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
-                    <div class="rating">
-                        &#9733;
-                    </div>
-                    <p class="text-sm">$50.00</p>
-                </div>
-                <div class="basis-1/4">
-                    <img class="w-full" src="images/products/product-3.jpg" alt="">
-                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
-                    <div class="rating">
-                        &#9733;
-                    </div>
-                    <p class="text-sm">$50.00</p>
-                </div>
-                <div class="basis-1/4">
-                    <img class="w-full" src="images/products/product-4.jpg" alt="">
-                    <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
-                    <div class="rating">
-                        &#9733;
-                    </div>
-                    <p class="text-sm">$50.00</p>
-                </div>
-        </div>
+        <Products activehref />
         <h2 class="text-xl font-bold text-center relative after:content-[''] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1 mt-10">Latest Products</h2>
         <div class="flex justify-center space-x-2 mt-5">
                 <div class="basis-1/4">
@@ -99,7 +69,6 @@
                     <p class="text-sm">$50.00</p>
                 </div>
         </div>
-        
         <div class="flex justify-center space-x-2 mt-5">
                 <div class="basis-1/4">
                     <img class="w-full hover:-translate-y-1.5 transition-transform" src="images/products/product-9.jpg" alt="">
@@ -135,6 +104,7 @@
                 </div>
         </div>
       </div>
+  </div>
       <div id="offer">
         <div class="container mx-auto mt-40">
           <div class="flex justify-center items-center">
@@ -205,37 +175,7 @@
               </div>
           </div>
       </div>
-      <div class="footer bg-black text-white">
-          <div class="container flex flex-wrap mt-20">
-              <div class="flex flex-col basis-1/2">
-                  <h3 class="text-lg">Download  Our App</h3>
-                  <p class="text-stone-500">DownLoad App for Android and ios mobile phone.</p>
-              </div>
-              <div class="flex flex-col basis-1/2">
-                  <img src="images/logo-white.png" class="w-1/2">
-                  <p class="text-stone-500">DownLoad App for Android and ios mobile phone.</p>
-              </div>
-              <div class="flex flex-col basis-1/2">
-                  <h3>Useful Links</h3>
-                  <ul class="text-stone-500">
-                      <li>Coupons</li>
-                      <li>Blog Post</li>
-                      <li>Return Policy</li>
-                      <li>Join Affiliate</li>
-                  </ul>
-              </div>
-              <div class="flex basis-1/2">
-                   <h3>Useful Links</h3>
-                   <ul class="text-stone-500"> 
-                       <li>FaceBook</li> 
-                       <li>Twitter</li> 
-                       <li>Insgram</li> 
-                       <li>Youtube</li> 
-                    </ul> 
-                </div>
-          </div>
-      </div>
-  </div>
+  
 </template>
 <script>
 import Layout from "@/Layouts/Ecommence/Layout";
