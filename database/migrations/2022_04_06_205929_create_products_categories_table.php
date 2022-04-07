@@ -14,17 +14,15 @@ class CreateProductsCategoriesTable extends Migration
     public function up()
     {
         Schema::create('products_categories', function (Blueprint $table) {
-            // $table->id();
             $table->unsignedBigInteger('categories_id')->nullable();
             $table->unsignedBigInteger('products_id')->nullable();
         });
 
         if (Schema::hasTable('products')) {
             Schema::table('products_categories', function (Blueprint $table) {
-                $table->primary(['categories_id', 'products_id']);
                 $table->foreign('products_id')
                     ->references('id')
-                    ->on('products_id')
+                    ->on('products')
                     ->onUpdate('cascade')
                     ->onDelete('set null')
                     ->change();
@@ -34,7 +32,7 @@ class CreateProductsCategoriesTable extends Migration
             Schema::table('products_categories', function (Blueprint $table) {
                 $table->foreign('categories_id')
                     ->references('id')
-                    ->on('categories_id')
+                    ->on('categories')
                     ->onUpdate('cascade')
                     ->onDelete('set null')
                     ->change();
