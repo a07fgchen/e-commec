@@ -6,6 +6,7 @@ let path = ref("/images/gallery-1.jpg");
 function getUrl(event) {
   path.value = event.target.src;
 }
+
 </script>
 <template>
   <div class="container mx-auto mt-5">
@@ -54,14 +55,14 @@ function getUrl(event) {
             <option value="">Medium</option>
             <option value="">Small</option>
           </select>
-          <input type="number" value="1" class="rounded-lg h-10 w-14 px-2" />
+          <input type="number" value="1" min="0" class="rounded-lg h-10 w-14 px-2" />
           <button type="button" class="bg-sky-500 p-2 rounded-lg w-2/4">
             Add to Cart
           </button>
         </div>
       </div>
     </div>
-    <h1 class="text-xl font-bold mt-10">Recommend</h1>
+    <h1 class="text-xl font-bold mt-10">Related</h1>
     <div class="flex justify-center space-x-2">
       <div class="basis-1/4">
         <img

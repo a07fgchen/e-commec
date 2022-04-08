@@ -3,9 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
-class CategoriesFactory extends Factory
+class CategoryProductFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,10 +13,8 @@ class CategoriesFactory extends Factory
      */
     public function definition()
     {
-         
         return [
             //
-            'name' => Str::random(10)
         ];
     }
 }

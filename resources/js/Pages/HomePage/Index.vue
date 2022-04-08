@@ -1,5 +1,9 @@
 <script setup>
 import Products from "@/Components/Ecommence/Products";
+
+defineProps({
+  products:Array
+})
 </script>
 <template>
   <div id="description" class="flex px-6 pt-12 md:px-12 justify-center items-center">
@@ -33,9 +37,10 @@ import Products from "@/Components/Ecommence/Products";
   <div id="product">
       <div class="container mx-auto mt-20">
         <h2 class="text-xl font-bold text-center relative after:content-[''] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1">Feature Products</h2>
-        <Products activehref />
+        <Products activehref :products="products" />
         <h2 class="text-xl font-bold text-center relative after:content-[''] after:-translate-x-1/2 after:bg-sky-500 after:w-20 after:h-1 after:absolute after:left-1/2 after:-bottom-1 mt-10">Latest Products</h2>
-        <div class="flex justify-center space-x-2 mt-5">
+        <Products activehref :products="products" />
+        <!-- <div class="flex justify-center space-x-2 mt-5">
                 <div class="basis-1/4">
                     <img class="w-full hover:-translate-y-1.5 transition-transform" src="images/products/product-5.jpg" alt="">
                     <h4 class="text-sm font-bold">Red Printed T-Shirt</h4>
@@ -102,7 +107,7 @@ import Products from "@/Components/Ecommence/Products";
                     </div>
                     <p class="text-sm">$50.00</p>
                 </div>
-        </div>
+        </div> -->
       </div>
   </div>
       <div id="offer">

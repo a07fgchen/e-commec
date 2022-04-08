@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Models\User;
 use Illuminate\Foundation\Application;
@@ -19,9 +21,10 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return Inertia::render('HomePage/Index');
-})->name('home');
+// Route::get('/', function () {
+//     return Inertia::render('HomePage/Index');
+// })->name('home');
+Route::get('/',HomeController::class)->name('home');
 
 Route::get('/cart', function () {
     return Inertia::render('Cart/Index');
@@ -31,9 +34,11 @@ Route::get('/products', function () {
     return Inertia::render('Products/Index');
 })->name('products');
 
-Route::get('/products/detail', function () {
-    return Inertia::render('Products/Detail');
-})->name('products.detail');
+// Route::get('/products/detail', function () {
+    
+//     return Inertia::render('Products/Detail');
+// })->name('products.detail');
+Route::get('/products/detail/{id}',DetailController::class)->name('products.detail');
 
 Route::get('notification', function () {
     return Inertia::render('notification');

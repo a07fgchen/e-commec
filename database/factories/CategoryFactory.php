@@ -3,8 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
-class ProductsCategoryFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,7 +15,8 @@ class ProductsCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'categories_id' =>$this->faker->random_int(0,20) ,
+            //
+            'name' => Str::random(10)
         ];
     }
 }
