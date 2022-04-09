@@ -54,6 +54,7 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
+            "@php artisan db:wipe",
             "@php artisan migrate",
             "@php artisan db:seed --class=ProductSeeder"
         ]
