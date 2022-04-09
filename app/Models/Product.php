@@ -13,4 +13,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class,'product_options');
+    }
 }

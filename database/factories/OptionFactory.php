@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class OptionFactory extends Factory
 {
@@ -14,7 +15,7 @@ class OptionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
         ];
     }
 }
