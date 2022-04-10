@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class ProductFactory extends Factory
+class ProductDetailFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,9 +16,11 @@ class ProductFactory extends Factory
     {
         return [
             //
-            'name' => $this->faker->words(1, true),
-            'spu' =>Str::random(10),
-            'description' => $this->faker->text(),
+            'sku' => Str::random(10),
+            'color' => Str::random(5),
+            'size' => Str::random(1),
+            'quantity' => $this->faker->randomNumber(),
+            'price' => $this->faker->randomNumber(),
         ];
     }
 }

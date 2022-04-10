@@ -34,10 +34,6 @@ Route::get('/products', function () {
     return Inertia::render('Products/Index');
 })->name('products');
 
-// Route::get('/products/detail', function () {
-    
-//     return Inertia::render('Products/Detail');
-// })->name('products.detail');
 Route::get('/products/detail/{id}',DetailController::class)->name('products.detail');
 
 Route::get('notification', function () {

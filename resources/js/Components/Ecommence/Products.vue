@@ -13,16 +13,16 @@ defineProps({
     >
       <template v-if="activehref">
         <Link :href="route('products.detail',{id:product.id})">
-          <img class="w-full" :src="product.image" :alt="product.name" />
+          <img class="w-full" :src="product.gallery.image" :alt="product.name" />
         </Link>
       </template>
       <template v-else>
-        <img class="w-full" :src="product.image" :alt="product.name" />
+        <img class="w-full" :src="product.gallery.image" :alt="product.name" />
       </template>
 
       <h4 class="text-sm font-bold">{{ product.name }}</h4>
-      <div class="rating">&#9733;</div>
-      <p class="text-sm">${{ product.price }}</p>
+      <!-- <div class="rating">&#9733;</div>
+      <p class="text-sm">${{ product.price }}</p> -->
     </div>
     <!-- <div class="basis-1/4">
       <img class="w-full" src="images/products/product-2.jpg" alt="" />

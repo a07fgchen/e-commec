@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from "vue";
+defineProps({
+  products: Object,
+});
 
 let path = ref("/images/gallery-1.jpg");
 
 function getUrl(event) {
   path.value = event.target.src;
 }
-
 </script>
 <template>
   <div class="container mx-auto mt-5">
@@ -15,11 +17,13 @@ function getUrl(event) {
         <img :src="path" class="w-full" />
         <div class="flex justify-between mt-4">
           <img
-            src="/images/gallery-1.jpg"
+            v-for="gallery in products.galleries"
+            :key="gallery.id"
+            :src="gallery.image"
             @click="getUrl"
             class="w-1/5 cursor-pointer"
           />
-          <img
+          <!-- <img
             src="/images/gallery-2.jpg"
             @click="getUrl"
             class="w-1/5 cursor-pointer"
@@ -33,7 +37,7 @@ function getUrl(event) {
             src="/images/gallery-4.jpg"
             @click="getUrl"
             class="w-1/5 cursor-pointer"
-          />
+          /> -->
         </div>
       </div>
       <div class="basis-1/2 px-4">
@@ -50,12 +54,17 @@ function getUrl(event) {
         <div class="flex space-x-3">
           <select class="rounded-lg h-10 w-1/3">
             <option value="">Select Size</option>
-            <option value="">XL</option>
-            <option value="">Large</option>
-            <option value="">Medium</option>
-            <option value="">Small</option>
+            <option
+              v-text="products.size"
+            ></option>
+         
           </select>
-          <input type="number" value="1" min="0" class="rounded-lg h-10 w-14 px-2" />
+          <input
+            type="number"
+            value="1"
+            min="0"
+            class="rounded-lg h-10 w-14 px-2"
+          />
           <button type="button" class="bg-sky-500 p-2 rounded-lg w-2/4">
             Add to Cart
           </button>

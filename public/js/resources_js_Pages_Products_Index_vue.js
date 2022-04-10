@@ -384,16 +384,6 @@ var _hoisted_3 = ["src", "alt"];
 var _hoisted_4 = {
   "class": "text-sm font-bold"
 };
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "rating"
-}, "★", -1
-/* HOISTED */
-);
-
-var _hoisted_6 = {
-  "class": "text-sm"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
@@ -410,7 +400,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
           "class": "w-full",
-          src: product.image,
+          src: product.gallery.image,
           alt: product.name
         }, null, 8
         /* PROPS */
@@ -424,15 +414,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
       key: 1,
       "class": "w-full",
-      src: product.image,
+      src: product.gallery.image,
       alt: product.name
     }, null, 8
     /* PROPS */
     , _hoisted_3)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(product.name), 1
     /* TEXT */
-    ), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(product.price), 1
-    /* TEXT */
-    )]);
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"rating\">&#9733;</div>\n      <p class=\"text-sm\">${{ product.price }}</p> ")]);
   }), 128
   /* KEYED_FRAGMENT */
   )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"basis-1/4\">\n      <img class=\"w-full\" src=\"images/products/product-2.jpg\" alt=\"\" />\n      <h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4>\n      <div class=\"rating\">&#9733;</div>\n      <p class=\"text-sm\">$50.00</p>\n    </div>\n    <div class=\"basis-1/4\">\n      <img class=\"w-full\" src=\"images/products/product-3.jpg\" alt=\"\" />\n      <h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4>\n      <div class=\"rating\">&#9733;</div>\n      <p class=\"text-sm\">$50.00</p>\n    </div>\n    <div class=\"basis-1/4\">\n      <img class=\"w-full\" src=\"images/products/product-4.jpg\" alt=\"\" />\n      <h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4>\n      <div class=\"rating\">&#9733;</div>\n      <p class=\"text-sm\">$50.00</p>\n    </div> ")]);

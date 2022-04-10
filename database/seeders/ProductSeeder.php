@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Product;
-use App\Models\Option;
+use App\Models\ProductDetail;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
@@ -23,14 +24,13 @@ class ProductSeeder extends Seeder
             ->has(
                 Category::factory()->count(3)
             )
-            ->has(Option::factory()->state(
-                new Sequence(
-                    ['name' => 'S'],
-                    ['name' => 'M'],
-                    ['name' => 'L'],
-                    ['name' => 'XL']
-                )
-            ))
+            ->has(
+                ProductDetail::factory()->count(3)
+                    ->has(
+                        Gallery::factory()->count(4)
+                    ),
+                'productDetails'
+            )
             ->create();
     }
 }
