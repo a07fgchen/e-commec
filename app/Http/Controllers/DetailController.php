@@ -12,10 +12,13 @@ class DetailController extends Controller
     //
     public function __invoke($id)
     {
-        $products = ProductDetail::with(['galleries'])->find($id);
-        
+        $product = Product::select('id', 'name', 'description')->with([
+            'productDetails' => function ($query) {
+                $query->select('id', 'product_id', 'size', 'price');
+            }, 'productDetails.galleries'
+        ])->find($id);
         return Inertia::render('Products/Detail', [
-            'products' => $products
+            'product' => $product,
         ]);
     }
 }

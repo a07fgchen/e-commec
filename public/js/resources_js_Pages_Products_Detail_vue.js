@@ -114,29 +114,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_Ecommence_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Ecommence/Layout */ "./resources/js/Layouts/Ecommence/Layout.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 var __default__ = {
   layout: _Layouts_Ecommence_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
 };
 
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   props: {
-    products: Object
+    product: Object,
+    auth: Object
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var path = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)("/images/gallery-1.jpg");
+    var props = __props;
+    var detail = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)(_objectSpread(_objectSpread({}, props.product.product_details[0]), {}, {
+      quantity: 1,
+      image: props.product.product_details[0].galleries[0].image
+    }));
+    (0,vue__WEBPACK_IMPORTED_MODULE_1__.watch)(function () {
+      return detail.id;
+    }, function (value) {
+      var result = props.product.product_details.find(function (element) {
+        return element.id === value;
+      });
+      detail.price = result.price;
+      detail.image = result.galleries[0].image;
+      detail.size = result.size;
+      detail.galleries = result.galleries;
+    });
 
-    function getUrl(event) {
-      path.value = event.target.src;
+    function changeImage(event) {
+      detail.image = event.target.src;
+    }
+
+    function addToCart() {
+      var _JSON$parse;
+
+      var cart = (_JSON$parse = JSON.parse(localStorage.getItem("cart"))) !== null && _JSON$parse !== void 0 ? _JSON$parse : [];
+      var data = JSON.parse(JSON.stringify(detail));
+      data.name = props.product.name;
+      data.image = detail.galleries[0].image;
+      delete data.galleries;
+      cart.push(data);
+
+      if (props.auth) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post(route('cart.create'), {
+          product: cart
+        });
+      } else {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("以新增至資料庫");
+      }
     }
 
     var __returned__ = {
-      path: path,
-      getUrl: getUrl,
+      props: props,
+      detail: detail,
+      changeImage: changeImage,
+      addToCart: addToCart,
       Layout: _Layouts_Ecommence_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
-      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
+      reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
+      watch: vue__WEBPACK_IMPORTED_MODULE_1__.watch,
+      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -400,63 +449,100 @@ var _hoisted_7 = {
   "class": "basis-1/2 px-4"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p>Home / T-shirt</p><h1 class=\"text-3xl font-extrabold\">Red Printed T-shirt by HRX</h1><h4 class=\"font-extrabold mt-3 text-slate-700/75\">$50.00</h4><div class=\"mt-3\"><h3 class=\"text-2xl font-bold\">Product Datail</h3><p class=\"text-md\"> Lorem ipsum dolor sit amet consectetur. Eius, maxime voluptas! Maiores, optio suscipit. Id eos quo quibusdam ut possimus! </p></div>", 4);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Home / T-shirt", -1
+/* HOISTED */
+);
 
-var _hoisted_12 = {
-  "class": "flex space-x-3"
+var _hoisted_9 = {
+  "class": "text-3xl font-extrabold"
 };
+var _hoisted_10 = {
+  "class": "font-extrabold mt-3 text-slate-700/75"
+};
+var _hoisted_11 = {
+  "class": "mt-3"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "text-2xl font-bold"
+}, "Product Datail", -1
+/* HOISTED */
+);
+
 var _hoisted_13 = {
-  "class": "rounded-lg h-10 w-1/3"
+  "class": "text-md mt-2"
+};
+var _hoisted_14 = {
+  "class": "flex space-x-3 mt-3"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: ""
-}, "Select Size", -1
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "",
+  disabled: ""
+}, "選擇尺寸", -1
 /* HOISTED */
 );
 
-var _hoisted_15 = ["textContent"];
+var _hoisted_16 = ["value", "textContent"];
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "number",
-  value: "1",
-  min: "0",
-  "class": "rounded-lg h-10 w-14 px-2"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "bg-sky-500 p-2 rounded-lg w-2/4"
-}, " Add to Cart ", -1
-/* HOISTED */
-);
-
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-xl font-bold mt-10\">Related</h1><div class=\"flex justify-center space-x-2\"><div class=\"basis-1/4\"><img class=\"w-full hover:-translate-y-1.5 transition-transform\" src=\"/images/products/product-9.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"/images/products/product-10.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"/images/products/product-11.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"/images/products/product-12.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div></div>", 2);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-xl font-bold mt-10\">Related</h1><div class=\"flex justify-center space-x-2\"><div class=\"basis-1/4\"><img class=\"w-full hover:-translate-y-1.5 transition-transform\" src=\"/images/products/product-9.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"/images/products/product-10.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"/images/products/product-11.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div><div class=\"basis-1/4\"><img class=\"w-full\" src=\"/images/products/product-12.jpg\" alt=\"\"><h4 class=\"text-sm font-bold\">Red Printed T-Shirt</h4><div class=\"rating\">★</div><p class=\"text-sm\">$50.00</p></div></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $setup.path,
+    src: $setup.detail.image,
     "class": "w-full"
   }, null, 8
   /* PROPS */
-  , _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.products.galleries, function (gallery) {
+  , _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.detail.galleries, function (gallery) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
       key: gallery.id,
       src: gallery.image,
-      onClick: $setup.getUrl,
-      "class": "w-1/5 cursor-pointer"
+      "class": "w-1/5 cursor-pointer",
+      onClick: _cache[0] || (_cache[0] = function ($event) {
+        return $setup.changeImage($event);
+      })
     }, null, 8
     /* PROPS */
     , _hoisted_6);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img\n            src=\"/images/gallery-2.jpg\"\n            @click=\"getUrl\"\n            class=\"w-1/5 cursor-pointer\"\n          />\n          <img\n            src=\"/images/gallery-3.jpg\"\n            @click=\"getUrl\"\n            class=\"w-1/5 cursor-pointer\"\n          />\n          <img\n            src=\"/images/gallery-4.jpg\"\n            @click=\"getUrl\"\n            class=\"w-1/5 cursor-pointer\"\n          /> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.products.size)
-  }, null, 8
-  /* PROPS */
-  , _hoisted_15)]), _hoisted_16, _hoisted_17])])]), _hoisted_18]);
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.name), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_10, " 價格: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.detail.price), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.description), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    "class": "rounded-lg h-10 w-1/3",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $setup.detail.id = $event;
+    })
+  }, [_hoisted_15, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.product.product_details, function (detail) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: detail.id,
+      value: detail.id,
+      textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(detail.size)
+    }, null, 8
+    /* PROPS */
+    , _hoisted_16);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.detail.id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "number",
+    min: "1",
+    "class": "rounded-lg h-10 w-14 px-2",
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $setup.detail.quantity = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.detail.quantity]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: $setup.addToCart,
+    type: "button",
+    "class": "bg-sky-500 p-2 rounded-lg w-2/4"
+  }, " Add to Cart ")])])]), _hoisted_17]);
 }
 
 /***/ }),

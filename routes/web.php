@@ -1,14 +1,11 @@
 <?php
 
-use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
 use App\Models\User;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
 /*
@@ -21,14 +18,14 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/', function () {
-//     return Inertia::render('HomePage/Index');
-// })->name('home');
+
 Route::get('/',HomeController::class)->name('home');
 
-Route::get('/cart', function () {
-    return Inertia::render('Cart/Index');
-})->name('cart');
+Route::get('/cart', [CartController::class,'index'])->name('cart');
+
+Route::post('/cart',[CartController::class,'create'])
+// ->middleware(['auth', 'verified'])
+->name('cart.create');
 
 Route::get('/products', function () {
     return Inertia::render('Products/Index');
