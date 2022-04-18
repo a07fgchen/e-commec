@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,19 +20,17 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/',HomeController::class)->name('home');
+Route::get('/', HomeController::class)->name('home');
 
-Route::get('/cart', [CartController::class,'index'])->name('cart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
-Route::post('/cart',[CartController::class,'create'])
-// ->middleware(['auth', 'verified'])
-->name('cart.create');
+Route::post('/cart', [CartController::class, 'create'])
+    // ->middleware(['auth', 'verified'])
+    ->name('cart.create');
 
-Route::get('/products', function () {
-    return Inertia::render('Products/Index');
-})->name('products');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
-Route::get('/products/detail/{id}',DetailController::class)->name('products.detail');
+Route::get('/products/detail/{id}', DetailController::class)->name('products.detail');
 
 Route::get('notification', function () {
     return Inertia::render('notification');
@@ -61,19 +60,19 @@ Route::get(
                         'email' => $user->email
                     ];
                 }),
-                'filters' => Request::only(['search']),
+            'filters' => Request::only(['search']),
         ]);
     }
 )->name('users');
 
-Route::get('/users/create',function(){
+Route::get('/users/create', function () {
     return Inertia::render('Users/Create');
 })->name('users.create');
 
-Route::post('/users',function(){
+Route::post('/users', function () {
     $attibutes = Request::validate([
         'name' => 'required',
-        'email' => ['required','email'],
+        'email' => ['required', 'email'],
         'password' => 'required'
     ]);
     User::create($attibutes);

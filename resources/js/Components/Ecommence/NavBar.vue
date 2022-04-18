@@ -42,8 +42,13 @@ import { computed } from "vue";
           </NavLink>
         </li>
         <li>
-          <NavLink :href="route('cart')" :active="$page.component === 'cart'">
+          <NavLink :href="route('cart')" :active="$page.component === 'Cart'">
             Cart
+          </NavLink>
+        </li>
+        <li>
+          <NavLink :href="route('products.index')" :active="$page.component === 'Product'">
+            Product
           </NavLink>
         </li>
         <li>

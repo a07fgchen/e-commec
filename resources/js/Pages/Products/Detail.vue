@@ -3,7 +3,6 @@ import { reactive } from "vue";
 import { watch } from "vue";
 import { Inertia } from "@inertiajs/inertia";
 
-
 const props = defineProps({
   product: Object,
   auth: Object,
@@ -35,12 +34,14 @@ function changeImage(event) {
 function addToCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) ?? [];
   let data = JSON.parse(JSON.stringify(detail));
+  
   data.name = props.product.name;
-  data.image = detail.galleries[0].image;
+  delete data.image;
   delete data.galleries;
   cart.push(data);
+
   if (props.auth) {
-    Inertia.post(route('cart.create'),{product:cart});
+    Inertia.post(route("cart.create"), { product: cart });
   } else {
     localStorage.setItem("cart", JSON.stringify(cart));
     alert("以新增至資料庫");

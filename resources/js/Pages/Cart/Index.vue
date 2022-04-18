@@ -3,6 +3,10 @@ import { reactive } from "vue";
 import { computed } from "vue";
 import { watch } from "vue";
 
+const props = defineProps({
+  carts:Object
+})
+
 let carts = reactive(JSON.parse(localStorage.getItem("cart")) ?? []);
 
 const subtotal = computed(() => {
