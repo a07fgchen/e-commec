@@ -28,13 +28,26 @@ Route::post('/cart', [CartController::class, 'create'])
     // ->middleware(['auth', 'verified'])
     ->name('cart.create');
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'index'])
+    ->middleware('throttle')
+    ->name('products.index');
 
 Route::get('/products/detail/{id}', DetailController::class)->name('products.detail');
 
 Route::get('notification', function () {
     return Inertia::render('notification');
 })->middleware(['auth', 'verified'])->name('notification');
+
+Route::middleware(['auth','verified'])->group(function(){
+  Route::get('/user',function(){
+      return 'test';
+  });
+});
+
+
+
+
+
 
 Route::get(
     '/setting',
