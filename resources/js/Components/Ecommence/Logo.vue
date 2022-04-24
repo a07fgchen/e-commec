@@ -1,5 +1,5 @@
 <template>
-    <div>
-        <img class="block w-full" src="/images/logo.png" alt="Logo">
+    <div class="text-4xl font-extrabold">
+        Logo
     </div>
 </template>

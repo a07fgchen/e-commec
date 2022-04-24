@@ -15,12 +15,12 @@ class CartController extends Controller
     public function index()
     {
         $cart = Cart::with(['productDetails'])->get();
-        return Inertia::render('Cart/Index',[
+        return Inertia::render('Cart/Index', [
             'carts' => $cart
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $productDetails = $request->input('product');
         $data = [];
@@ -32,7 +32,8 @@ class CartController extends Controller
             $data[$key]['created_at'] = now();
             $data[$key]['updated_at'] = now();
         }
-        return DB::table('carts')->insert($data);
-        
+        DB::table('carts')->insert($data);
+
+        return redirect()->back();
     }
 }

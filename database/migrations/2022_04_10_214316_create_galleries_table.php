@@ -42,7 +42,7 @@ class CreateGalleriesTable extends Migration
     public function down()
     {
         Schema::table('products',function(Blueprint $table){
-            $table->dropForeign(['products']);
+            $table->dropForeign(['gallery_id']);
         });
         
         Schema::dropIfExists('galleries');

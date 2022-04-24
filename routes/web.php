@@ -24,9 +24,9 @@ Route::get('/', HomeController::class)->name('home');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
-Route::post('/cart', [CartController::class, 'create'])
+Route::post('/cart', [CartController::class, 'store'])
     // ->middleware(['auth', 'verified'])
-    ->name('cart.create');
+    ->name('cart.store');
 
 Route::get('/products', [ProductController::class, 'index'])
     ->middleware('throttle')
@@ -38,12 +38,11 @@ Route::get('notification', function () {
     return Inertia::render('notification');
 })->middleware(['auth', 'verified'])->name('notification');
 
-Route::middleware(['auth','verified'])->group(function(){
-  Route::get('/user',function(){
+Route::middleware(['admin'])->group(function(){
+  Route::get('/admin/user',function(){
       return 'test';
   });
 });
-
 
 
 

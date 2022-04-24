@@ -6,6 +6,7 @@ import { Inertia } from "@inertiajs/inertia";
 const props = defineProps({
   product: Object,
   auth: Object,
+  error:String,
 });
 
 let detail = reactive({
@@ -34,14 +35,25 @@ function changeImage(event) {
 function addToCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) ?? [];
   let data = JSON.parse(JSON.stringify(detail));
-  
+
   data.name = props.product.name;
   delete data.image;
   delete data.galleries;
   cart.push(data);
 
   if (props.auth) {
-    Inertia.post(route("cart.create"), { product: cart });
+    Inertia.post(
+      route("cart.store"),
+      { product: cart },
+      {
+        onSuccess: (page) => {
+          alert('success');
+        },
+         onError: (errors) => {
+           alert(console.log('error'));
+         },
+      }
+    );
   } else {
     localStorage.setItem("cart", JSON.stringify(cart));
     alert("以新增至資料庫");
@@ -64,13 +76,12 @@ function addToCart() {
         </div>
       </div>
       <div class="basis-1/2 px-4">
-        <p>Home / T-shirt</p>
         <h1 class="text-3xl font-extrabold">{{ product.name }}</h1>
         <h4 class="font-extrabold mt-3 text-slate-700/75">
           價格: {{ detail.price }}
         </h4>
         <div class="mt-3">
-          <h3 class="text-2xl font-bold">Product Datail</h3>
+          <h3 class="text-2xl font-bold">產品描述</h3>
           <p class="text-md mt-2">
             {{ product.description }}
           </p>
