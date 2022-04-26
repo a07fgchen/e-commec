@@ -15,7 +15,7 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('product_detail_id')->constrained('product_details');
             $table->unsignedBigInteger('quantity');
             $table->timestamps();
@@ -29,7 +29,7 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
-        Schema::table('carts',function(Blueprint $table){
+        Schema::table('carts', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['product_detail_id']);
         });

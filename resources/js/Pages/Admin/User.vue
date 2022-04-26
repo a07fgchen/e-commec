@@ -32,15 +32,31 @@ defineProps({
               text-center
             "
           >
-            <div class="basis-1/3">
+            <div class="basis-1/4">
               {{ user.name }}
             </div>
-            <div class="basis-1/3">
+            <div class="basis-1/4">
               {{ user.email }}
             </div>
-            <div class="basis-1/3">
-              <Link :href="route('admin.user.edit',{id:user.id})" as="button" type="button" class="border rounded-md bg-red-500 px-3 py-2">
+            <div class="basis-1/4">
+              <Link
+                :href="route('admin.user.edit', { id: user.id })"
+                as="button"
+                type="button"
+                class="border rounded-md bg-red-500 px-3 py-2"
+              >
                 Edit
+              </Link>
+            </div>
+            <div class="basis-1/4">
+              <Link
+                :href="route('admin.user.delete', { id: user.id })"
+                as="button"
+                type="button"
+                method="delete"
+                class="border rounded-md bg-red-500 px-3 py-2"
+              >
+                Delete
               </Link>
             </div>
           </div>
