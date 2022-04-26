@@ -11,28 +11,30 @@ class AdminProductController extends Controller
     //
     public function index()
     {
-        return Inertia::render('Admin/Product',[
+        return Inertia::render('Admin/Product', [
             'products' => Product::all()
         ]);
     }
 
     public function edit($id)
     {
-        return Inertia::render('Admin/ProductEdit',[
+        return Inertia::render('Admin/ProductEdit', [
             'product' => Product::find($id)
         ]);
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        return Inertia::render('Admin/ProductEdit',[
-            'product' => Product::find($id)
-        ]);
+        Product::where('id', $id)->update($request->all());
+
+        return redirect()->route('admin.product');
     }
 
     public function create()
     {
-        return Inertia::render('Admin/ProductCreate');
+        return Inertia::render('Admin/ProductCreate', [
+            'products' => Product::all(['id', 'name'])
+        ]);
     }
 
     public function store(Request $request)
@@ -40,7 +42,7 @@ class AdminProductController extends Controller
         $data = $request->all();
         Product::create($data);
     }
-    
+
     public function destroy($id)
     {
         Product::find($id)->delete();

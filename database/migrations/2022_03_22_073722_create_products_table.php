@@ -17,7 +17,6 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->char('name', 255);
             $table->string('spu');
-            $table->string('description')->nullable();
             $table->timestamps();
         });        
     }

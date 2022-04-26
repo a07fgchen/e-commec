@@ -27,8 +27,13 @@ function deleteItem(id) {
     </template>
 
     <div class="py-6">
-      <div class="py-6 max-w-xs ml-auto">
-        <Link :href="route('admin.product.create')"> Add New Product </Link>
+      <div class="flex justify-end items-center">
+        <div class="basis-1/3">
+          <Link :href="route('admin.product.create')"> Add New SPU </Link>
+        </div>
+        <div class="basis-1/3">
+          <Link :href="route('admin.product.create')"> Add New SKU </Link>
+        </div>
       </div>
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <table class="bg-white w-full text-center">
