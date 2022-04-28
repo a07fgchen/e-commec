@@ -10,6 +10,7 @@ const props = defineProps({
 const form = useForm({
   name: props.product.name,
   sku: props.product.sku,
+  size: props.product.size,
 });
 
 function send(id) {
@@ -44,10 +45,25 @@ function send(id) {
               </div>
               <div class="flex items-center text-center">
                 <div class="basis-1/3">
-                  <label for="name"> sku </label>
+                  <label for="name"> 商品編號 </label>
                 </div>
                 <div class="basis-2/3">
                   <input type="text" v-model="form.sku" />
+                </div>
+              </div>
+              <div class="flex items-center text-center">
+                <div class="basis-1/3">
+                  <label for="size"> 商品尺寸 </label>
+                </div>
+                <div class="basis-2/3">
+                  <select name="size" id="size" v-model="form.size">
+                    <option value="" disabled>請選擇尺寸</option>
+                    <option value="s">s</option>
+                    <option value="m">m</option>
+                    <option value="l">l</option>
+                    <option value="xl">xl</option>
+                    <option value="xxl">xxl</option>
+                  </select>
                 </div>
               </div>
               <div class="flex items-center justify-end text-center">

@@ -2,14 +2,15 @@
 import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue";
 import { Inertia } from "@inertiajs/inertia";
 import { Head, useForm } from "@inertiajs/inertia-vue3";
+import SelectSize from "@/Components/Ecommence/SelectSize.vue"
 
 defineProps({
   products: Object,
 });
 
 let form = useForm({
-  id: "",
-  descrtion: "",
+  product_id: "",
+  name: "",
   sku: "",
   quantity: 0,
   size: "",
@@ -29,13 +30,25 @@ let form = useForm({
     <div class="py-6">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-3">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-3">
-          <form @submit.prevent="form.put(route('admin.product.create'))">
+          <form
+            @submit.prevent="
+              form.post(route('admin.product.store'), {
+                onSuccess: () => {
+                  alert('Created');
+                },
+              })
+            "
+          >
             <div class="flex flex-wrap justify-center items-center text-center">
               <div class="basis-1/3">
                 <label for="descrtion"> 商品名稱 </label>
               </div>
               <div class="basis-2/3">
-                <select name="descrtion" id="descrtion" v-model="form.id">
+                <select
+                  name="descrtion"
+                  id="descrtion"
+                  v-model="form.product_id"
+                >
                   <option value="" disabled>請選擇商品</option>
                   <option
                     :value="product.id"
@@ -49,10 +62,18 @@ let form = useForm({
             </div>
             <div class="flex flex-wrap justify-center items-center text-center">
               <div class="basis-1/3">
-                <label for="descrtion"> 商品描述 </label>
+                <label for="sku"> 商品編號 </label>
               </div>
               <div class="basis-2/3">
-                <input type="text" v-model="form.descrtion" />
+                <input id="sku" type="text" v-model="form.sku" />
+              </div>
+            </div>
+            <div class="flex flex-wrap justify-center items-center text-center">
+              <div class="basis-1/3">
+                <label for="name"> 商品描述 </label>
+              </div>
+              <div class="basis-2/3">
+                <input id="name" type="text" v-model="form.name" />
               </div>
             </div>
             <div class="flex flex-wrap justify-center items-center text-center">

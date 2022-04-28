@@ -6,6 +6,8 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Models\Category;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +43,7 @@ Route::get('notification', function () {
 })->middleware(['auth', 'verified'])->name('notification');
 
 Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
+
     // User
     Route::get('/', [UserController::class, 'index'])->name('user.index');
 
@@ -54,15 +57,32 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
         ]);
     })->name('user.edit');
     // Product
-    Route::get('product', [AdminProductController::class, 'index'])->name('product');
+    Route::get('product/create', function () {
+        return Inertia::render('Admin/ProductItem', [
+            'categories' => Category::all(['id', 'name']),
+        ]);
+    })->name('spu.create');
 
-    Route::get('product/{id}/edit', [AdminProductController::class, 'edit'])->name('product.edit');
+    Route::post('product', function (Request $request) {
+        $id = $request->input('category_id');
+        $data = $request->except(['category_id']);
+        Product::create($data)->categories()->attach($id);
+        return redirect()->route('admin.product');
+    })->name('spu.store');
 
-    Route::get('product/create', [AdminProductController::class, 'create'])->name('product.create');
+    Route::get('product/detail', [AdminProductController::class, 'index'])->name('product');
 
-    Route::put('product/{id}', [AdminProductController::class, 'update'])->name('product.update');
-    
-    Route::delete('product/{id}',[AdminProductController::class,'destroy'])->name('product.delete');
+    Route::get('product/detail/{id}/edit', [AdminProductController::class, 'edit'])->name('product.edit');
+
+    Route::get('product/detail/create', [AdminProductController::class, 'create'])->name('product.create');
+
+    Route::get('product/detail/create', [AdminProductController::class, 'create'])->name('product.create');
+
+    Route::post('product/detail', [AdminProductController::class, 'store'])->name('product.store');
+
+    Route::put('product/detail/{id}', [AdminProductController::class, 'update'])->name('product.update');
+
+    Route::delete('product/detail/{id}', [AdminProductController::class, 'destroy'])->name('product.delete');
 });
 
 Route::get(

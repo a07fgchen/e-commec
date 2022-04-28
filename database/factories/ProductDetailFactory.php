@@ -16,8 +16,8 @@ class ProductDetailFactory extends Factory
     {
         return [
             //
+            'name' => Str::random(10),
             'sku' => Str::random(10),
-            'color' => Str::random(5),
             'size' => Str::random(1),
             'quantity' => $this->faker->randomNumber(),
             'price' => $this->faker->randomNumber(),

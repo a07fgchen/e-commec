@@ -12,7 +12,7 @@ defineProps({
 
   <BreezeAuthenticatedLayout>
     <template #header>
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">User</h2>
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">使用者</h2>
     </template>
 
     <div class="py-12">

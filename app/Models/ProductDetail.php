@@ -9,6 +9,8 @@ class ProductDetail extends Model
 {
     use HasFactory;
 
+    protected $fillable  = ['product_id', 'name', 'sku', 'size', 'quantity', 'price'];
+
     public function galleries()
     {
         return $this->hasMany(Gallery::class);

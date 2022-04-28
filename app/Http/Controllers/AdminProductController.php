@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,20 +13,20 @@ class AdminProductController extends Controller
     public function index()
     {
         return Inertia::render('Admin/Product', [
-            'products' => Product::all()
+            'products' => ProductDetail::paginate(20)
         ]);
     }
 
     public function edit($id)
     {
         return Inertia::render('Admin/ProductEdit', [
-            'product' => Product::find($id)
+            'product' => ProductDetail::find($id)
         ]);
     }
 
     public function update(Request $request, $id)
     {
-        Product::where('id', $id)->update($request->all());
+        ProductDetail::where('id', $id)->update($request->all());
 
         return redirect()->route('admin.product');
     }
@@ -40,12 +41,15 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Product::create($data);
+        Product::find($data['product_id'])
+            ->productDetails()
+            ->create($data);
+        return redirect()->route('admin.product');
     }
 
     public function destroy($id)
     {
-        Product::find($id)->delete();
+        ProductDetail::find($id)->delete();
 
         return redirect()->route('admin.product');
     }
