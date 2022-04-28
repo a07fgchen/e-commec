@@ -30,10 +30,7 @@ function deleteItem(id) {
     <div class="py-6">
       <div class="flex justify-end items-center">
         <div class="basis-1/3">
-          <Link :href="route('admin.spu.create')"> 新增品項 </Link>
-        </div>
-        <div class="basis-1/3">
-          <Link :href="route('admin.product.create')"> 新增商品 </Link>
+          <Link :href="route('admin.spu.create')"> 新增產品 </Link>
         </div>
       </div>
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -41,8 +38,8 @@ function deleteItem(id) {
           <thead>
             <tr class="border-b border-gray-200">
               <th class="p-3">#</th>
-              <th class="p-3">商品名稱</th>
-              <th class="p-3">商品編號</th>
+              <th class="p-3">產品名稱</th>
+              <th class="p-3">產品編號</th>
               <th class="p-3">-</th>
               <th class="p-3">-</th>
             </tr>
@@ -55,7 +52,7 @@ function deleteItem(id) {
             >
               <td class="p-3">{{ product.id }}</td>
               <td class="p-3">{{ product.name }}</td>
-              <td class="p-3">{{ product.sku }}</td>
+              <td class="p-3">{{ product.spu }}</td>
               <td class="p-3">
                 <Link :href="route('admin.product.edit', product.id)">
                   Edit

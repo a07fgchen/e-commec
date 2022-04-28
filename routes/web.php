@@ -70,19 +70,19 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
         return redirect()->route('admin.product');
     })->name('spu.store');
 
-    Route::get('product/detail', [AdminProductController::class, 'index'])->name('product');
+    Route::resource('product/detail', AdminProductController::class)->names([
+        'index'=>'product',
+        'edit'=>'product.edit',
+        'create'=>'product.create',
+        'store'=>'product.store',
+        'update'=>'product.update',
+        'destroy'=>'product.destroy',
+    ]);
 
-    Route::get('product/detail/{id}/edit', [AdminProductController::class, 'edit'])->name('product.edit');
-
-    Route::get('product/detail/create', [AdminProductController::class, 'create'])->name('product.create');
-
-    Route::get('product/detail/create', [AdminProductController::class, 'create'])->name('product.create');
-
-    Route::post('product/detail', [AdminProductController::class, 'store'])->name('product.store');
-
-    Route::put('product/detail/{id}', [AdminProductController::class, 'update'])->name('product.update');
-
-    Route::delete('product/detail/{id}', [AdminProductController::class, 'destroy'])->name('product.delete');
+    //order
+    Route::get('order',function(){
+        return 'test';
+    })->name('order');
 });
 
 Route::get(
