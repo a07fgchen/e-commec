@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
@@ -57,32 +58,44 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
         ]);
     })->name('user.edit');
     // Product
-    Route::get('product/create', function () {
-        return Inertia::render('Admin/ProductItem', [
-            'categories' => Category::all(['id', 'name']),
-        ]);
-    })->name('spu.create');
+    // Route::get('product/create', function () {
+    // return Inertia::render('Admin/ProductItem', [
+    //     'categories' => Category::all(['id', 'name']),
+    // ]);
+    // })->name('spu.create');
 
-    Route::post('product', function (Request $request) {
-        $id = $request->input('category_id');
-        $data = $request->except(['category_id']);
-        Product::create($data)->categories()->attach($id);
-        return redirect()->route('admin.product');
-    })->name('spu.store');
+    // Route::post('product', function (Request $request) {
+    // $id = $request->input('category_id');
+    // $data = $request->except(['category_id']);
+    // Product::create($data)->categories()->attach($id);
+    // return redirect()->route('admin.product');
+    // })->name('spu.store');
+    Route::get('shelves',function(){
+        echo 'test';
+    })->name('shelves');
 
-    Route::resource('product/detail', AdminProductController::class)->names([
-        'index'=>'product',
-        'edit'=>'product.edit',
-        'create'=>'product.create',
-        'store'=>'product.store',
-        'update'=>'product.update',
-        'destroy'=>'product.destroy',
+    Route::get('categories',function(){
+        echo 'test';
+    })->name('categories');
+
+    Route::resource('product', AdminProductController::class)->names([
+        'index' => 'product',
+        'edit' => 'product.edit',
+        'create' => 'product.create',
+        'store' => 'product.store',
+        'update' => 'product.update',
+        'destroy' => 'product.destroy',
     ]);
 
     //order
-    Route::get('order',function(){
-        return 'test';
-    })->name('order');
+    Route::resource('order', OrderController::class)->names([
+        'index' => 'order',
+        'edit' => 'order.edit',
+        'create' => 'order.create',
+        'store' => 'order.store',
+        'update' => 'order.update',
+        'destroy' => 'order.destroy'
+    ]);
 });
 
 Route::get(

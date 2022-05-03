@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -33,7 +34,7 @@ class AdminProductController extends Controller
     public function create()
     {
         return Inertia::render('Admin/ProductCreate', [
-            'products' => Product::all(['id', 'name'])
+            'categories' => Category::all(['id', 'name']),
         ]);
     }
 

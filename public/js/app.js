@@ -45619,13 +45619,13 @@ var map = {
 		"./resources/js/Pages/Admin/ProductCreate.vue",
 		"resources_js_Pages_Admin_ProductCreate_vue"
 	],
+	"./Admin/ProductCreateDetail.vue": [
+		"./resources/js/Pages/Admin/ProductCreateDetail.vue",
+		"resources_js_Pages_Admin_ProductCreateDetail_vue"
+	],
 	"./Admin/ProductEdit.vue": [
 		"./resources/js/Pages/Admin/ProductEdit.vue",
 		"resources_js_Pages_Admin_ProductEdit_vue"
-	],
-	"./Admin/ProductItem.vue": [
-		"./resources/js/Pages/Admin/ProductItem.vue",
-		"resources_js_Pages_Admin_ProductItem_vue"
 	],
 	"./Admin/User.vue": [
 		"./resources/js/Pages/Admin/User.vue",
@@ -45846,7 +45846,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","/home/yen/e-commec"]],"_
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Admin_Product_vue":1,"resources_js_Pages_Admin_ProductCreate_vue":1,"resources_js_Pages_Admin_ProductEdit_vue":1,"resources_js_Pages_Admin_ProductItem_vue":1,"resources_js_Pages_Admin_User_vue":1,"resources_js_Pages_Admin_UserEdit_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Cart_Index_vue":1,"resources_js_Pages_Dashboard_vue":1,"resources_js_Pages_HomePage_Index_vue":1,"resources_js_Pages_Products_Detail_vue":1,"resources_js_Pages_Products_Index_vue":1,"resources_js_Pages_Shared_Layout_vue":1,"resources_js_Pages_Shared_Nav_vue":1,"resources_js_Pages_Shared_NavLink_vue":1,"resources_js_Pages_Shared_Pagination_vue":1,"resources_js_Pages_Users_Create_vue":1,"resources_js_Pages_Users_Index_vue":1,"resources_js_Pages_Welcome_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Admin_Product_vue":1,"resources_js_Pages_Admin_ProductCreate_vue":1,"resources_js_Pages_Admin_ProductCreateDetail_vue":1,"resources_js_Pages_Admin_ProductEdit_vue":1,"resources_js_Pages_Admin_User_vue":1,"resources_js_Pages_Admin_UserEdit_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Cart_Index_vue":1,"resources_js_Pages_Dashboard_vue":1,"resources_js_Pages_HomePage_Index_vue":1,"resources_js_Pages_Products_Detail_vue":1,"resources_js_Pages_Products_Index_vue":1,"resources_js_Pages_Shared_Layout_vue":1,"resources_js_Pages_Shared_Nav_vue":1,"resources_js_Pages_Shared_NavLink_vue":1,"resources_js_Pages_Shared_Pagination_vue":1,"resources_js_Pages_Users_Create_vue":1,"resources_js_Pages_Users_Index_vue":1,"resources_js_Pages_Welcome_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

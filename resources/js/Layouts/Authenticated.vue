@@ -20,7 +20,7 @@ const showingNavigationDropdown = ref(false);
             <div class="flex">
               <!-- Logo -->
               <div class="shrink-0 flex items-center">
-                <Link :href="route('dashboard')"> 後臺管理 </Link>
+                <Link :href="route('admin.user.index')"> 後臺管理 </Link>
               </div>
 
               <!-- Navigation Links -->
@@ -42,24 +42,24 @@ const showingNavigationDropdown = ref(false);
               </div>
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <BreezeNavLink
-                  :href="route('admin.product')"
-                  :active="route().current('admin.product')"
+                  :href="route('admin.shelves')"
+                  :active="route().current('admin.shelves')"
                 >
                   上架商品
                 </BreezeNavLink>
               </div>
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <BreezeNavLink
-                  :href="route('admin.product')"
-                  :active="route().current('admin.product')"
+                  :href="route('admin.categories')"
+                  :active="route().current('admin.categories')"
                 >
                   分類
                 </BreezeNavLink>
               </div>
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <BreezeNavLink
-                  :href="route('admin.product')"
-                  :active="route().current('admin.product')"
+                  :href="route('admin.order')"
+                  :active="route().current('admin.order')"
                 >
                   訂單
                 </BreezeNavLink>

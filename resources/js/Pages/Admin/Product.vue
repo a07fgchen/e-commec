@@ -30,7 +30,7 @@ function deleteItem(id) {
     <div class="py-6">
       <div class="flex justify-end items-center">
         <div class="basis-1/3">
-          <Link :href="route('admin.spu.create')"> 新增產品 </Link>
+          <Link :href="route('admin.product.create')"> 新增產品 </Link>
         </div>
       </div>
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
