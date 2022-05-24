@@ -19,6 +19,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->words(1, true),
             'spu' =>Str::random(10),
             'description' => $this->faker->text(),
+            'image' => $this->faker->imageUrl(1080,1440)
         ];
     }
 }

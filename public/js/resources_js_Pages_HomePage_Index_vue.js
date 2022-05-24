@@ -491,7 +491,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
           "class": "w-full",
-          src: product.gallery.image,
+          src: product.image,
           alt: product.name
         }, null, 8
         /* PROPS */
@@ -505,7 +505,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
       key: 1,
       "class": "w-full",
-      src: product.gallery.image,
+      src: product.image,
       alt: product.name
     }, null, 8
     /* PROPS */

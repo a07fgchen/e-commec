@@ -20,13 +20,13 @@ defineProps({
         <Link :href="route('products.detail', { id: product.id })">
           <img
             class="w-full"
-            :src="product.gallery.image"
+            :src="product.image"
             :alt="product.name"
           />
         </Link>
       </template>
       <template v-else>
-        <img class="w-full" :src="product.gallery.image" :alt="product.name" />
+        <img class="w-full" :src="product.image" :alt="product.name" />
       </template>
       <h4 class="text-sm font-bold">{{ product.name }}</h4>
     </div>

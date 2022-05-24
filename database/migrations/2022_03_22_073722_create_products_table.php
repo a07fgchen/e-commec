@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('spu');
+            $table->string('image')->nullable();
             $table->timestamps();
         });        
     }
